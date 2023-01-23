@@ -1,6 +1,5 @@
 package ru.alichev.springcourse.Springproject3.services;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.alichev.springcourse.Springproject3.models.Sensor;
