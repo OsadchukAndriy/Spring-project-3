@@ -1,6 +1,7 @@
 package ru.alichev.springcourse.Springproject3.models;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -13,13 +14,13 @@ public class Measurements {
     private int id;
 
     @Column(name = "value")
-    private long value;
+    private Double value;
 
     @Column(name = "raining")
     private boolean raining;
 
     @Column(name = "measurement_date_time")
-    private Date measurementDateTime;
+    private LocalDateTime measurementDateTime;
 
     @ManyToOne
     @JoinColumn(name = "sensor", referencedColumnName = "name")
@@ -28,7 +29,7 @@ public class Measurements {
     public Measurements() {
     }
 
-    public Measurements(long value, boolean raining, Sensor sensor) {
+    public Measurements(Double value, boolean raining, Sensor sensor) {
         this.value = value;
         this.raining = raining;
         this.sensor = sensor;
@@ -42,11 +43,11 @@ public class Measurements {
         this.id = id;
     }
 
-    public long getValue() {
+    public Double getValue() {
         return value;
     }
 
-    public void setValue(long value) {
+    public void setValue(Double value) {
         this.value = value;
     }
 
@@ -58,11 +59,11 @@ public class Measurements {
         this.raining = raining;
     }
 
-    public Date getMeasurementDateTime() {
+    public LocalDateTime getMeasurementDateTime() {
         return measurementDateTime;
     }
 
-    public void setMeasurementDateTime(Date measurementDateTime) {
+    public void setMeasurementDateTime(LocalDateTime measurementDateTime) {
         this.measurementDateTime = measurementDateTime;
     }
 
